@@ -1,7 +1,7 @@
 {
 	"name": "tm-finish",
 	"private": true,
-	"version": "0.4.7",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
@@ -10,9 +10,9 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"rmdist": "shx rm -rf dist",
-		"certs:init": "shx mkdir -p .certs && cd .certs && mkcert create-ca && mkcert create-cert --domain react-starter.dev",
+		"certs:init": "shx mkdir -p .certs && cd .certs && mkcert create-ca && mkcert create-cert --domain react-ssr-starter.dev",
 		"=== ssr": "=========== SSR =============================",
-		"ssr:dev": "node server",
+		"ssr:dev": "cross-env NODE_ENV=development node server",
 		"ssr:build:client": "vite build --ssrManifest --outDir dist/client",
 		"ssr:build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
 		"ssr:build": "pnpm run ssr:build:client && pnpm run ssr:build:server",

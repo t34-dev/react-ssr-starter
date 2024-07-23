@@ -7,13 +7,21 @@ import { readFileSync } from 'node:fs';
 import { loadEnv } from 'vite';
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
-const isHTTPS = parseBoolean(env.HTTPS);
+let isHTTPS = parseBoolean(env.HTTPS);
 const isDev = env.NODE_ENV === 'development';
+const isDocker = parseBoolean(env.IS_DOCKER);
 
 // =====================================================
-const hostname = env.HOST || 'localhost';
-const port = env.PORT ? parseInt(env.PORT) : isHTTPS ? 443 : isDev ? 5173 : 4173;
+let hostname = env.HOST || 'localhost';
+let port = parseInt(env.PORT);
+if (!port) port = isHTTPS ? 443 : isDev ? 5173 : 4173;
 // =====================================================
+
+if (isDocker) {
+	port = 3000;
+	hostname = '0.0.0.0';
+	isHTTPS = false;
+}
 
 const base = env.BASE || '/';
 const certDir = isHTTPS ? resolve(dirname(fileURLToPath(import.meta.url)), '.certs') : '';

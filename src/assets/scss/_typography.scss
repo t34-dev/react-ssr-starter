@@ -1,0 +1,724 @@
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin line-height($lineHeight) {
+  line-height: $lineHeight;
+}
+
+@mixin letter-spacing($letterSpacing) {
+  letter-spacing: $letterSpacing;
+}
+
+@mixin font-style($fontStyle: normal) {
+  font-style: $fontStyle;
+}
+
+@mixin font-size($fontSize: 400) {
+  font-size: $fontSize;
+}
+
+@mixin font-family($fontFamily) {
+  font-family: $fontFamily;
+}
+
+@mixin text-transform($textTransform: uppercase) {
+  text-transform: $textTransform;
+}
+
+@mixin font-family-Inter() {
+  @include font-family(var(--font-base));
+  @include font-style;
+}
+
+@mixin font-family-Share-Tech-Mono() {
+  @include font-family(var(--font-second));
+  @include font-style;
+}
+
+@mixin font-family-Oxanium() {
+  @include font-family(var(--font-yakuza-secondary));
+  @include font-style;
+}
+
+@mixin font-family-Druk() {
+  @include font-family(var(--font-yakuza));
+  @include font-style;
+}
+
+@mixin font-family-Roboto() {
+  @include font-family(var(--font-third));
+  @include font-style;
+}
+
+@mixin font-family-Jura() {
+  @include font-family(var(--font-jura));
+  @include font-style;
+}
+
+@mixin H1-Light() {
+  @include font-family-Roboto;
+  @include font-size(9.6rem);
+  @include font-weight(300);
+  @include line-height(116.7%);
+  @include letter-spacing(0.384rem);
+}
+
+@mixin H1-Regular() {
+  @include H1-Light;
+  @include font-weight(400);
+}
+
+@mixin H1-Medium() {
+  @include H1-Light;
+  @include font-weight(500);
+}
+
+@mixin H1-SemiBold() {
+  @include H1-Light;
+  @include font-weight(600);
+}
+
+@mixin H1-Bold() {
+  @include H1-Light;
+  @include font-weight(700);
+}
+
+// H2
+@mixin H2-Light() {
+  @include font-family-Roboto;
+  @include font-size(6rem);
+  @include line-height(120%);
+  @include letter-spacing(0.24rem);
+  @include font-weight(300);
+}
+
+@mixin H2-Regular() {
+  @include H2-Light;
+  @include font-weight(400);
+}
+
+@mixin H2-Medium() {
+  @include H2-Light;
+  @include font-weight(500);
+}
+
+@mixin H2-SemiBold() {
+  @include H2-Light;
+  @include font-weight(600);
+}
+
+@mixin H2-Bold() {
+  @include H2-Light;
+  @include font-weight(700);
+}
+
+// H3
+@mixin H3-Light() {
+  @include font-family-Roboto;
+  @include font-size(4.8rem);
+  @include line-height(116.7%);
+  @include letter-spacing(0.192rem);
+  @include font-weight(300);
+}
+
+@mixin H3-Regular() {
+  @include H3-Light;
+  @include font-weight(400);
+}
+
+@mixin H3-Medium() {
+  @include H3-Light;
+  @include font-weight(500);
+}
+
+@mixin H3-SemiBold() {
+  @include H3-Light;
+  @include font-weight(600);
+}
+
+@mixin H3-Bold() {
+  @include H3-Light;
+  @include font-weight(700);
+}
+
+// H4
+@mixin H4-Light() {
+  @include font-family-Roboto;
+  @include font-size(3.4rem);
+  @include line-height(123.5%);
+  @include letter-spacing(0.136rem);
+  @include font-weight(300);
+}
+
+@mixin H4-Regular() {
+  @include H4-Light;
+  @include font-weight(400);
+}
+
+@mixin H4-Medium() {
+  @include H4-Light;
+  @include font-weight(500);
+}
+
+@mixin H4-SemiBold() {
+  @include H4-Light;
+  @include font-weight(600);
+}
+
+@mixin H4-Bold() {
+  @include H4-Light;
+  @include font-weight(700);
+}
+
+// H5
+@mixin H5-Light() {
+  @include font-family-Roboto;
+  @include font-size(2.4rem);
+  @include line-height(133.4%);
+  @include letter-spacing(0.096rem);
+  @include font-weight(300);
+}
+
+@mixin H5-Regular() {
+  @include H5-Light;
+  @include font-weight(400);
+}
+
+@mixin H5-Medium() {
+  @include H5-Light;
+  @include font-weight(500);
+}
+
+@mixin H5-SemiBold() {
+  @include H5-Light;
+  @include font-weight(600);
+}
+
+@mixin H5-Bold() {
+  @include H5-Light;
+  @include font-weight(700);
+}
+
+// H6
+@mixin H6-Light() {
+  @include font-family-Roboto;
+  @include font-size(2rem);
+  @include line-height(160%);
+  @include letter-spacing(0.08rem);
+  @include font-weight(300);
+}
+
+@mixin H6-Regular() {
+  @include H6-Light;
+  @include font-weight(400);
+}
+
+@mixin H6-Medium() {
+  @include H6-Light;
+  @include font-weight(500);
+}
+
+@mixin H6-SemiBold() {
+  @include H6-Light;
+  @include font-weight(600);
+}
+
+@mixin H6-Bold() {
+  @include H6-Light;
+  @include font-weight(700);
+}
+
+// Caption
+@mixin Caption-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(160%);
+  @include letter-spacing(0.048rem);
+  @include font-weight(300);
+}
+
+@mixin Caption-Regular() {
+  @include Caption-Light;
+  @include font-weight(400);
+}
+
+@mixin Caption-Medium() {
+  @include Caption-Light;
+  @include font-weight(500);
+}
+
+@mixin Caption-SemiBold() {
+  @include Caption-Light;
+  @include font-weight(600);
+}
+
+@mixin Caption-Bold() {
+  @include Caption-Light;
+  @include font-weight(700);
+}
+
+// Caption-2
+@mixin Caption-2-Light() {
+  @include font-family-Roboto;
+  @include font-size(1rem);
+  @include line-height(160%);
+  @include letter-spacing(0.04rem);
+  @include font-weight(300);
+}
+
+@mixin Caption-2-Regular() {
+  @include Caption-2-Light;
+  @include font-weight(400);
+}
+
+@mixin Caption-2-Medium() {
+  @include Caption-2-Light;
+  @include font-weight(500);
+}
+
+@mixin Caption-2-SemiBold() {
+  @include Caption-2-Light;
+  @include font-weight(600);
+}
+
+@mixin Caption-2-Bold() {
+  @include Caption-2-Light;
+  @include font-weight(700);
+}
+
+// Overline
+@mixin Overline-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(1.2rem);
+  @include letter-spacing(0.048rem);
+  @include font-weight(300);
+  @include text-transform(uppercase);
+}
+
+@mixin Overline-Regular() {
+  @include Overline-Light;
+  @include font-weight(400);
+}
+
+@mixin Overline-Medium() {
+  @include Overline-Light;
+  @include font-weight(500);
+}
+
+@mixin Overline-SemiBold() {
+  @include Overline-Light;
+  @include font-weight(600);
+}
+
+@mixin Overline-Bold() {
+  @include Overline-Light;
+  @include font-weight(700);
+}
+
+// Overline-1
+@mixin Subtitle-1-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.6rem);
+  @include line-height(250%);
+  @include letter-spacing(0.064rem);
+  @include font-weight(300);
+}
+
+@mixin Subtitle-1-Regular() {
+  @include Subtitle-1-Light;
+  @include font-weight(400);
+}
+
+@mixin Subtitle-1-Medium() {
+  @include Subtitle-1-Light;
+  @include font-weight(500);
+}
+
+@mixin Subtitle-1-SemiBold() {
+  @include Subtitle-1-Light;
+  @include font-weight(600);
+}
+
+@mixin Subtitle-1-Bold() {
+  @include Subtitle-1-Light;
+  @include font-weight(700);
+}
+
+// Overline-2
+@mixin Subtitle-2-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.4rem);
+  @include line-height(157%);
+  @include letter-spacing(0.056rem);
+  @include font-weight(300);
+}
+
+@mixin Subtitle-2-Regular() {
+  @include Subtitle-2-Light;
+  @include font-weight(400);
+}
+
+@mixin Subtitle-2-Medium() {
+  @include Subtitle-2-Light;
+  @include font-weight(500);
+}
+
+@mixin Subtitle-2-SemiBold() {
+  @include Subtitle-2-Light;
+  @include font-weight(600);
+}
+
+@mixin Subtitle-2-Bold() {
+  @include Subtitle-2-Light;
+  @include font-weight(700);
+}
+
+// Body-1
+@mixin Body-1-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.6rem);
+  @include line-height(150%);
+  @include letter-spacing(0.064rem);
+  @include font-weight(300);
+}
+
+@mixin Body-1-Regular() {
+  @include Body-1-Light;
+  @include font-weight(400);
+}
+
+@mixin Body-1-Medium() {
+  @include Body-1-Light;
+  @include font-weight(500);
+}
+
+@mixin Body-1-SemiBold() {
+  @include Body-1-Light;
+  @include font-weight(600);
+}
+
+@mixin Body-1-Bold() {
+  @include Body-1-Light;
+  @include font-weight(700);
+}
+
+// Body-2
+@mixin Body-2-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.4rem);
+  @include line-height(143%);
+  @include letter-spacing(0.056rem);
+  @include font-weight(300);
+}
+
+@mixin Body-2-Regular() {
+  @include Body-2-Light;
+  @include font-weight(400);
+}
+
+@mixin Body-2-Medium() {
+  @include Body-2-Light;
+  @include font-weight(500);
+}
+
+@mixin Body-2-SemiBold() {
+  @include Body-2-Light;
+  @include font-weight(600);
+}
+
+@mixin Body-2-Bold() {
+  @include Body-2-Light;
+  @include font-weight(700);
+}
+
+// Custom-Table-Header
+@mixin Custom-Table-Header-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.4rem);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.056rem);
+  @include font-weight(300);
+}
+
+@mixin Custom-Table-Header-Regular() {
+  @include Custom-Table-Header-Light;
+  @include font-weight(400);
+}
+
+@mixin Custom-Table-Header-Medium() {
+  @include Custom-Table-Header-Light;
+  @include font-weight(500);
+}
+
+@mixin Custom-Table-Header-SemiBold() {
+  @include Custom-Table-Header-Light;
+  @include font-weight(600);
+}
+
+@mixin Custom-Table-Header-Bold() {
+  @include Custom-Table-Header-Light;
+  @include font-weight(700);
+}
+
+// Custom-Input-Label
+@mixin Custom-Input-Label-Light() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(1.2rem);
+  @include letter-spacing(0.048rem);
+  @include font-weight(300);
+}
+
+@mixin Custom-Input-Label-Regular() {
+  @include Custom-Input-Label-Light;
+  @include font-weight(400);
+}
+
+@mixin Custom-Input-Label-Small-Regular() {
+  @include Custom-Input-Label-Regular;
+  @include font-size(1rem);
+}
+
+@mixin Custom-Input-Label-Medium() {
+  @include Custom-Input-Label-Light;
+  @include font-weight(500);
+}
+
+@mixin Custom-Input-Label-Small-Medium() {
+  @include Custom-Input-Label-Medium;
+  @include font-size(1rem);
+  @include letter-spacing(0.04rem);
+}
+
+@mixin Custom-Input-Label-SemiBold() {
+  @include Custom-Input-Label-Light;
+  @include font-weight(600);
+}
+
+@mixin Custom-Input-Label-Bold() {
+  @include Custom-Input-Label-Light;
+  @include font-weight(700);
+}
+
+// Custom-HelperText
+@mixin Custom-Charts-Data() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(1.6rem);
+  @include letter-spacing(0.048rem);
+  @include font-weight(400);
+}
+
+// Custom-HelperText
+@mixin Custom-HelperText() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(1.992rem);
+  @include letter-spacing(0.048rem);
+  @include font-weight(400);
+}
+
+// Custom-Timer-Regular
+@mixin Custom-Timer-Regular() {
+  @include font-family-Roboto;
+  @include font-size(1.6rem);
+  @include line-height(2.4rem);
+  @include font-weight(400);
+  @include letter-spacing(0.064rem);
+}
+
+// Custom-Timer-Small
+@mixin Custom-Timer-Small() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(2rem);
+  @include font-weight(400);
+  @include letter-spacing(0.064rem);
+}
+
+// Custom-Tag
+@mixin Custom-Tag() {
+  @include font-family-Roboto;
+  @include font-size(1rem);
+  @include line-height(1.2rem);
+  @include font-weight(500);
+  @include letter-spacing(0.04rem);
+}
+
+// Button
+@mixin Button-Large() {
+  @include font-family-Roboto;
+  @include font-size(1.6rem);
+  @include line-height(2.4rem);
+  @include font-weight(500);
+  @include letter-spacing(0.064rem);
+}
+
+@mixin Button-Medium() {
+  @include font-family-Roboto;
+  @include font-size(1.4rem);
+  @include line-height(2.4rem);
+  @include font-weight(500);
+  @include letter-spacing(0.056rem);
+}
+
+@mixin Button-Small() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include line-height(2.4rem);
+  @include font-weight(500);
+  @include letter-spacing(0.048rem);
+}
+
+@mixin Button-ExtraSmall() {
+  @include font-family-Roboto;
+  @include font-size(1rem);
+  @include line-height(1.6rem);
+  @include font-weight(500);
+  @include letter-spacing(0.04rem);
+}
+
+// Badge
+@mixin Badge-Large() {
+  @include font-family-Roboto;
+  @include font-size(1rem);
+  @include line-height(1.2rem);
+  @include font-weight(500);
+  @include letter-spacing(0.04rem);
+}
+
+@mixin Badge-Small() {
+  @include font-family-Roboto;
+  @include font-size(0.8rem);
+  @include line-height(1rem);
+  @include font-weight(500);
+  @include letter-spacing(0.032rem);
+}
+
+// Chip
+@mixin Chip-Small() {
+  @include font-family-Roboto;
+  @include font-size(1rem);
+  @include line-height(1.2rem);
+  @include font-weight(400);
+  @include letter-spacing(0.04rem);
+}
+
+@mixin Chip-Medium() {
+  @include font-family-Roboto;
+  @include font-size(1.3rem);
+  @include line-height(1.8rem);
+  @include font-weight(400);
+  @include letter-spacing(0.052rem);
+}
+
+// Copyright
+
+@mixin Copyright() {
+  @include font-family-Roboto;
+  @include font-size(1.2rem);
+  @include font-weight(400);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.048rem);
+
+  text-transform: uppercase;
+}
+
+// Og-Jura
+@mixin Og-Jura-Bold-H4-Bold() {
+  @include font-family-Jura;
+  @include font-size(3.2rem);
+  @include line-height(4.2rem);
+  @include letter-spacing(0.14rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Bold-H5-Bold() {
+  @include font-family-Jura;
+  @include font-size(2.4rem);
+  @include line-height(3.2rem);
+  @include letter-spacing(0.096rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Bold-H6-Bold() {
+  @include font-family-Jura;
+  @include font-size(2rem);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.08rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Medium-H4-Medium() {
+  @include font-family-Jura;
+  @include font-size(3.2rem);
+  @include line-height(4.2rem);
+  @include letter-spacing(0.128rem);
+  @include font-weight(500);
+}
+
+@mixin Og-Jura-Medium-H5-Medium() {
+  @include font-family-Jura;
+  @include font-size(2.4rem);
+  @include line-height(3.2rem);
+  @include letter-spacing(0.096rem);
+  @include font-weight(500);
+}
+
+@mixin Og-Jura-Overline-H6-Bold() {
+  @include font-family-Jura;
+  @include font-size(2rem);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.1rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Bold-Subtitle-Bold() {
+  @include font-family-Jura;
+  @include font-size(1.6rem);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.064rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Medium-Subtitle-Medium() {
+  @include font-family-Jura;
+  @include font-size(1.6rem);
+  @include line-height(2.4rem);
+  @include letter-spacing(0.064rem);
+  @include font-weight(500);
+}
+
+@mixin Og-Jura-Bold-Subtitle-3-Bold() {
+  @include font-family-Jura;
+  @include font-size(1.2rem);
+  @include line-height(1.6rem);
+  @include letter-spacing(0.048rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Bold-Subtitle-2-Bold() {
+  @include font-family-Jura;
+  @include font-size(1.4rem);
+  @include line-height(1.7rem);
+  @include letter-spacing(0.056rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Overline-Subtitle-1-Bold() {
+  @include font-family-Jura;
+  @include font-size(1.6rem);
+  @include line-height(2rem);
+  @include letter-spacing(0.1rem);
+  @include font-weight(700);
+}
+
+@mixin Og-Jura-Overline-Subtitle-3-Bold() {
+  @include font-family-Jura;
+  @include font-size(1.2rem);
+  @include line-height(1.6rem);
+  @include letter-spacing(0.1rem);
+  @include font-weight(700);
+}

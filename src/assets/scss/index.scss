@@ -1,0 +1,42 @@
+//@import "fonts";
+@import 'adaptive';
+@import 'normalize';
+@import 'common';
+
+
+:root {
+  font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	color: #000;
+}
+button{
+	color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 1.4rem;
+  place-items: center;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

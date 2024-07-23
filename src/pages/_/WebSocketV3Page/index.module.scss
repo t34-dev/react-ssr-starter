@@ -1,0 +1,12 @@
+@import '@common';
+
+.wrap {
+  height: inherit;
+  &__box{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+}

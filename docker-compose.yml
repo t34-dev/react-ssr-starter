@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: .
+    image: my-frontend-app15
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_BASE_HTTP_URL=https://postman-echo.com/
+      - VITE_BASE_WS_URL=wss://ws.postman-echo.com/raw1

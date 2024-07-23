@@ -1,0 +1,44 @@
+@import '@common';
+
+.wrap {
+  height: inherit;
+	padding: 2rem 0;
+  &__box{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+}
+.color{
+  &__CONNECTED{
+    color: green;
+  }
+  &__DISCONNECTED{
+    color: red;
+  }
+  &__CONNECTING{
+    color: orange;
+  }
+}
+
+.item{
+  padding: 2.4rem;
+  background: rgba(126, 149, 231, 0.2);
+  display: flex;
+  gap: 1.2rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 0 2rem #cbd0e1;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #fbf9f9;
+  h3{
+    margin: 0;
+  }
+  &__actions{
+    display: flex;
+    width: 100%;
+    gap: 1.2rem;
+  }
+}

@@ -1,0 +1,21 @@
+@import '@common';
+
+.wrap {
+  justify-content: space-between;
+  width: 100%;
+
+  a {
+    display: block;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.active {
+  background: rgba(255, 0, 0, 0.16);
+}

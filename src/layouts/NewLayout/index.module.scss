@@ -1,0 +1,33 @@
+@import '@common';
+
+.wrap{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: flex-start;
+  &__head{
+    width: 100%;
+    background: #5366a3;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+  &__body{
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 10rem;
+  }
+  &__footer{
+    flex: 0 0 auto;
+    background: #777;
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+

@@ -1,0 +1,57 @@
+@import '@common';
+
+.wrap {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu{
+	display: flex;
+	width: 100%;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	&__item {
+		display: block;
+		padding: 1rem 2rem;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+			background: #5e74b9;
+		}
+		&Active {
+			background: #5e74b9 !important;
+		}
+	}
+	&__left{
+		display: flex;
+		align-items: center;
+		gap: .2rem;
+	}
+	&__right{
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+.status{
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 10rem;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	&__CONNECTING{
+		background: orange;
+	}
+	&__CONNECTED{
+		background: green;
+	}
+	&__DISCONNECTED{
+		background: red;
+	}
+	&__STOPPED{
+		background: #000;
+	}
+}

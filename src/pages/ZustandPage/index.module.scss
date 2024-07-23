@@ -1,0 +1,20 @@
+@import '@common';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &__content {
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  &__bottom {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+}

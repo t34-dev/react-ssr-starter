@@ -3,14 +3,16 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   plugins: ['@typescript-eslint', 'prettier'],
   parserOptions: {
-    ecmaVersion: 2022,
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   env: {
     node: true,
     es6: true,
   },
-  rules: {
-    'prettier/prettier': 'error',
-  },
+	rules: {
+		"prettier/prettier": "error",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-explicit-any": "warn"
+	},
 };

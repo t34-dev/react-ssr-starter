@@ -1,21 +1,24 @@
-@import '@common';
+@import "@common";
 
 .wrap {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 175rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
-  @include Media-Desktop-Big{
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-  @include Media-Table-Big{
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-  @include Media-Mobile-Big{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+	width: 100%;
+	margin: 0 auto;
+	max-width: 175rem;
+	padding-left: 6rem;
+	padding-right: 6rem;
+
+	@include Media-Desktop-Big {
+		padding-left: 5rem;
+		padding-right: 5rem;
+	}
+
+	@include Media-Table-Big {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	@include Media-Mobile-Big {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }

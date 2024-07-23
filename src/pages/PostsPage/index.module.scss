@@ -1,69 +1,69 @@
-@import '@common';
+@import "@common";
 
 .wrap {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
 
-  &__content {
-    flex: 1 1 auto;
-    overflow: hidden;
-  }
+	&__content {
+		flex: 1 1 auto;
+		overflow: hidden;
+	}
 
-  &__bottom {
-    flex: 0 0 auto;
-    padding: 1.6rem;
-  }
+	&__bottom {
+		flex: 0 0 auto;
+		padding: 1.6rem;
+	}
 }
 
 .box {
-  @include noneSelect;
+	@include noneSelect;
 
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  overflow: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	overflow: auto;
 
-  &__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    font-weight: bold;
-    cursor: pointer;
-  }
+	&__top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		font-weight: bold;
+		cursor: pointer;
+	}
 }
 
 .h1 {
-  color: #fff;
+	color: #fff;
 }
 
 .btn {
-  width: 100%;
-  background: orange;
-  border: none;
-  border-radius: 0;
+	width: 100%;
+	background: orange;
+	border: none;
+	border-radius: 0;
 }
 
 .list {
-  margin: 0;
-  padding: 1.6rem;
-  color: #fff;
+	margin: 0;
+	padding: 1.6rem;
+	color: #fff;
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.12);
-  }
+	&:hover {
+		background: rgba(0, 0, 0, 0.12);
+	}
 
-  li {
-    display: flex;
-    list-style: none;
+	li {
+		display: flex;
+		list-style: none;
 
-    u {
-      display: inline-flex;
-      flex: 0 0 auto;
-      width: 6rem;
-      color: rgba(255, 255, 255, 0.41);
-    }
-  }
+		u {
+			display: inline-flex;
+			flex: 0 0 auto;
+			width: 6rem;
+			color: rgba(255, 255, 255, 0.41);
+		}
+	}
 }

@@ -1,69 +1,69 @@
 // styles for IDEA - copy from src/theme/vars
-@import '@/ZKXWallet/public/styles';
+@import "@/ZKXWallet/public/styles";
 
 :root {
-  // fonts
-  --font: 'Inter', sans-serif;
-  --fontSecond: 'Jura', sans-serif;
-  --fontThird: 'Share Tech Mono', sans-serif;
+	// fonts
+	--font: "Inter", sans-serif;
+	--fontSecond: "Jura", sans-serif;
+	--fontThird: "Share Tech Mono", sans-serif;
 
-  // colors
-  --primary: #fff;
-  --secondary: #fff;
-  --background: #fff;
-  --yellow: #fff;
-  --token: #fff;
-  --black: #fff;
-  --white: #fff;
-  --neutralWhite: #f6f6f6;
-  --darkGray: #312839;
-  --backgroundLogo: #fff;
-  --backgroundDefault: #1f1725;
-  --backgroundDark: #19131f;
-  --backgroundLight: #221a29;
-  --backgroundInput: #35293d;
-  --backgroundInputText: #8e6fa3;
-  --backgroundSideNav: #170f1f;
-  --textDisabled: #675671;
-  --textPrimary: #d7d7d7;
-  --textSecondary: #9e9e9e;
-  --textTertiary: #666;
-  --stateNegative: #ec605a;
-  --statePositive: #63b48e;
-  --brandingPrimary: #61ff00;
-  --brandingSecondary: #8000ff;
-  --brandingAdditionalPink: #fff;
-  --brandingAdditionalYellow: #fff;
-  --newBackgroundDark: #fff;
-  --newBackgroundLight: #fff;
-  --newOutline: #3f1d5b;
-  --newText: #cb8cff;
-  --favIcon: #ceb013;
-  --brandingPrimary2: #00ff82;
-  --theme-dark-background-widget-dark: #18111d;
-  --theme-dark-background-widget-light-p: #1f1725;
-  --gradients-neutral-dark: linear-gradient(180deg, #2e2138 0%, #1f1725 100%);
-  --theme-dark-background-highlight-button-40: rgba(53, 41, 61, 0.4);
-  --theme-dark-background-highlight-button-20: rgba(53, 41, 61, 0.2);
+	// colors
+	--primary: #fff;
+	--secondary: #fff;
+	--background: #fff;
+	--yellow: #fff;
+	--token: #fff;
+	--black: #fff;
+	--white: #fff;
+	--neutralWhite: #f6f6f6;
+	--darkGray: #312839;
+	--backgroundLogo: #fff;
+	--backgroundDefault: #1f1725;
+	--backgroundDark: #19131f;
+	--backgroundLight: #221a29;
+	--backgroundInput: #35293d;
+	--backgroundInputText: #8e6fa3;
+	--backgroundSideNav: #170f1f;
+	--textDisabled: #675671;
+	--textPrimary: #d7d7d7;
+	--textSecondary: #9e9e9e;
+	--textTertiary: #666;
+	--stateNegative: #ec605a;
+	--statePositive: #63b48e;
+	--brandingPrimary: #61ff00;
+	--brandingSecondary: #8000ff;
+	--brandingAdditionalPink: #fff;
+	--brandingAdditionalYellow: #fff;
+	--newBackgroundDark: #fff;
+	--newBackgroundLight: #fff;
+	--newOutline: #3f1d5b;
+	--newText: #cb8cff;
+	--favIcon: #ceb013;
+	--brandingPrimary2: #00ff82;
+	--theme-dark-background-widget-dark: #18111d;
+	--theme-dark-background-widget-light-p: #1f1725;
+	--gradients-neutral-dark: linear-gradient(180deg, #2e2138 0%, #1f1725 100%);
+	--theme-dark-background-highlight-button-40: rgba(53, 41, 61, 0.4);
+	--theme-dark-background-highlight-button-20: rgba(53, 41, 61, 0.2);
 
-  // radius
-  --radiusSmall: 0.2rem;
-  --radius: 0.4rem;
-  --radiusLarge: 0.8rem;
+	// radius
+	--radiusSmall: 0.2rem;
+	--radius: 0.4rem;
+	--radiusLarge: 0.8rem;
 
-  // buttons
-  --heightSmall: 2.8rem;
-  --heightButton: 3.2rem;
-  --heightButtonBig: 4rem;
-  --heightButtonLarge: 4.8rem;
+	// buttons
+	--heightSmall: 2.8rem;
+	--heightButton: 3.2rem;
+	--heightButtonBig: 4rem;
+	--heightButtonLarge: 4.8rem;
 
-  // settings
-  --widthColumnGap: 2rem;
-  --widthColumnTableRight: 1.8rem;
-  --widthColumn: 100%;
-  --widthMinColumn: 32rem;
-  --widthMaxColumn: 36rem;
+	// settings
+	--widthColumnGap: 2rem;
+	--widthColumnTableRight: 1.8rem;
+	--widthColumn: 100%;
+	--widthMinColumn: 32rem;
+	--widthMaxColumn: 36rem;
 
-  // spacing
-  --spacingDefault: 2.4rem;
+	// spacing
+	--spacingDefault: 2.4rem;
 }

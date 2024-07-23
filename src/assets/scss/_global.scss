@@ -5,57 +5,57 @@ $transitionSpeedFast: 0.3s;
 selector-class-pattern, keyframes-name-pattern, no-duplicate-selectors */
 
 :global {
-  ::-webkit-scrollbar {
-    width: 12px;
-    background-color: transparent;
-  }
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: transparent;
+	}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-  }
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.2);
+		border-radius: 6px;
+	}
 
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
 
-  .indexMain-enter {
-    transform: translateX(-110%);
-  }
+	.indexMain-enter {
+		transform: translateX(-110%);
+	}
 
-  .indexMain-enter-active {
-    transform: translateX(0%);
-    transition: all $transitionSpeed ease;
-  }
+	.indexMain-enter-active {
+		transform: translateX(0%);
+		transition: all $transitionSpeed ease;
+	}
 
-  .indexMain-exit {
-    position: absolute;
-  }
+	.indexMain-exit {
+		position: absolute;
+	}
 
-  .indexMain-exit-active {
-    transform: translateX(-110%);
-    transition: all $transitionSpeed ease;
-  }
+	.indexMain-exit-active {
+		transform: translateX(-110%);
+		transition: all $transitionSpeed ease;
+	}
 
-  .indexSettings-enter {
-    transform: translateX(110%);
-  }
+	.indexSettings-enter {
+		transform: translateX(110%);
+	}
 
-  .indexSettings-enter-active {
-    transform: translateX(0%);
-    transition: all $transitionSpeed ease;
-  }
+	.indexSettings-enter-active {
+		transform: translateX(0%);
+		transition: all $transitionSpeed ease;
+	}
 
-  .indexSettings-exit {
-    position: absolute;
-  }
+	.indexSettings-exit {
+		position: absolute;
+	}
 
-  .indexSettings-exit-active {
-    transform: translateX(110%);
-    transition: all $transitionSpeed ease;
-  }
+	.indexSettings-exit-active {
+		transform: translateX(110%);
+		transition: all $transitionSpeed ease;
+	}
 
-  iframe {
-    background-color: #130d18 !important;
-  }
+	iframe {
+		background-color: #130d18 !important;
+	}
 }

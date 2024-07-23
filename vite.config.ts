@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
 	const isDocker = parseBoolean(env.IS_DOCKER);
 	let isHTTPS = parseBoolean(env.HTTPS);
 	let hostname = isDocker ? '0.0.0.0' : env.HOST;
-	let port = parseInt(env.PORT) || 5173;
+	let port = parseInt(env.PORT) || isDev ? 5173 : 4173;
 
 	if (isDocker) {
 		port = 3000;

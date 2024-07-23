@@ -8,26 +8,26 @@ import { loadEnv } from 'vite';
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 const isHTTPS = parseBoolean(env.HTTPS);
-const isProduction = env.NODE_ENV === 'production';
+const isDev = env.NODE_ENV === 'development';
 
 // =====================================================
 const hostname = env.HOST || 'localhost';
-const port = env.PORT ? parseInt(env.PORT) : isHTTPS ? 443 : 5173;
+const port = env.PORT ? parseInt(env.PORT) : isHTTPS ? 443 : isDev ? 5173 : 4173;
 // =====================================================
 
 const base = env.BASE || '/';
 const certDir = isHTTPS ? resolve(dirname(fileURLToPath(import.meta.url)), '.certs') : '';
 
 // Cached production assets
-const templateHtml = isProduction ? await fs.readFile('./dist/client/index.html', 'utf-8') : '';
-const ssrManifest = isProduction ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8') : undefined;
+const templateHtml = !isDev ? await fs.readFile('./dist/client/index.html', 'utf-8') : '';
+const ssrManifest = !isDev ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8') : undefined;
 
 // Create http server
 const app = express();
 
 // Add Vite or respective production middlewares
 let vite;
-if (!isProduction) {
+if (isDev) {
 	const { createServer } = await import('vite');
 	vite = await createServer({
 		server: { middlewareMode: true },
@@ -49,7 +49,7 @@ app.use('*', async (req, res) => {
 
 		let template;
 		let render;
-		if (!isProduction) {
+		if (isDev) {
 			// Always read fresh template in development
 			template = await fs.readFile('./index.html', 'utf-8');
 			template = await vite.transformIndexHtml(url, template);

@@ -1,0 +1,34 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss"
+	],
+	"plugins": ["stylelint-prettier"],
+	"rules": {
+		"prettier/prettier": true,
+		"scss/comment-no-empty": null,
+		"no-descending-specificity": null,
+		"property-no-vendor-prefix": null,
+		"no-empty-source": null,
+		"scss/no-global-function-names": null,
+		"scss/double-slash-comment-whitespace-inside": null,
+		"alpha-value-notation": "number",
+		"color-function-notation": null,
+		"selector-class-pattern": "^[a-zA-Z0-9-_]+$",
+		"custom-property-pattern": "^[a-zA-Z][a-zA-Z0-9-_]+$",
+		"keyframes-name-pattern": "^[a-z][a-zA-Z0-9]+$",
+		"scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9-_]+$",
+		"scss/at-mixin-pattern": "^[a-zA-Z][a-zA-Z0-9-_]+$",
+		"scss/at-extend-no-missing-placeholder": null,
+		"selector-pseudo-class-no-unknown": null,
+		"property-no-unknown": null,
+		"scss/at-import-partial-extension": null,
+		"scss/at-import-no-partial-leading-underscore": null
+	},
+	"ignoreFiles": ["src/assets/scss/mixins.scss", "public/assets/styles.css"],
+	"overrides": [
+		{
+			"files": ["./apps/core/**/*.scss"],
+			"rules": {}
+		}
+	]
+}

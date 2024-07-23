@@ -1,144 +1,145 @@
-@import '@common';
+@import "@common";
 
 .wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  padding: 2rem;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	padding: 2rem;
+	overflow: hidden;
 }
 
 .box {
-  @include noneSelect;
+	@include noneSelect;
 
-  display: flex;
-  width: 100%;
-  max-width: 100rem;
-  height: 40rem;
-  overflow: hidden;
-  color: #fff;
-  background: #2f2f33;
-  border: 0.2rem solid rgba(255, 255, 255, 0.1);
-  border-radius: 2rem 7rem 7rem 2rem;
-  box-shadow: 0 0 1rem #484848;
+	display: flex;
+	width: 100%;
+	max-width: 100rem;
+	height: 40rem;
+	overflow: hidden;
+	color: #fff;
+	background: #2f2f33;
+	border: 0.2rem solid rgba(255, 255, 255, 0.1);
+	border-radius: 2rem 7rem 7rem 2rem;
+	box-shadow: 0 0 1rem #484848;
 
-  @include Media-Table-Big {
-    flex-direction: column;
-    height: auto;
-    border-radius: 1rem;
-  }
+	@include Media-Table-Big {
+		flex-direction: column;
+		height: auto;
+		border-radius: 1rem;
+	}
 
-  &__left {
-    position: relative;
-    flex: 0 0 auto;
-    width: 25rem;
-    background: rgb(31, 31, 31);
+	&__left {
+		position: relative;
+		flex: 0 0 auto;
+		width: 25rem;
+		background: rgb(31, 31, 31);
 
-    &::before {
-      position: absolute;
-      background: url('/favicon.svg') repeat center center;
-      opacity: 0.05;
-      content: '';
-      pointer-events: none;
-      inset: 0;
-    }
+		&::before {
+			position: absolute;
+			background: url("/favicon.svg") repeat center center;
+			opacity: 0.05;
+			content: "";
+			pointer-events: none;
+			inset: 0;
+		}
 
-    @include Media-Table-Big {
-      width: 100%;
-    }
-  }
+		@include Media-Table-Big {
+			width: 100%;
+		}
+	}
 
-  &__right {
-    position: relative;
-    flex: 1 1 auto;
+	&__right {
+		position: relative;
+		flex: 1 1 auto;
 
-    @include Media-Table-Big {
-      min-height: 50rem;
-    }
-  }
+		@include Media-Table-Big {
+			min-height: 50rem;
+		}
+	}
 }
 
 .content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 
-  &__top {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    height: 5rem;
-    padding: 0 1.6rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    gap: 2rem;
-    &_lang{
-      display: flex;
-      gap: 1rem;
-    }
-  }
+	&__top {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		height: 5rem;
+		padding: 0 1.6rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		gap: 2rem;
 
-  &__bottom {
-    height: 100%;
-    overflow: auto;
-  }
+		&_lang {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+
+	&__bottom {
+		height: 100%;
+		overflow: auto;
+	}
 }
 
 .left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  justify-content: space-between;
-  height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	justify-content: space-between;
+	height: 100%;
 
-  &__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    color: #fff;
-    font-weight: 800;
-    font-size: 3rem;
-    border-radius: 0;
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 5rem;
+		color: #fff;
+		font-weight: 800;
+		font-size: 3rem;
+		border-radius: 0;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.13);
-    }
-  }
+		&:hover {
+			background: rgba(0, 0, 0, 0.13);
+		}
+	}
 
-  &__icons {
-    display: flex;
-    flex: 0 0 auto;
-    gap: 2rem;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    background: #0f0f1a;
+	&__icons {
+		display: flex;
+		flex: 0 0 auto;
+		gap: 2rem;
+		justify-content: center;
+		width: 100%;
+		padding: 1rem;
+		background: #0f0f1a;
 
-    a {
-      display: flex;
-    }
-  }
+		a {
+			display: flex;
+		}
+	}
 
-  &__nav {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: flex-start;
-  }
+	&__nav {
+		display: flex;
+		flex: 1 1 auto;
+		align-items: flex-start;
+	}
 
-  &__bottom {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    color: #000;
-    font-weight: 600;
-    background: orange;
-  }
+	&__bottom {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+		height: 5rem;
+		color: #000;
+		font-weight: 600;
+		background: orange;
+	}
 }

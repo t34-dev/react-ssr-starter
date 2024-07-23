@@ -1,11 +1,11 @@
-import { getErrorMessageFromE } from "@/utils/errors.ts";
+import { getErrorMessageFromE } from '@/utils/errors.ts';
 
 export enum NewWebSocketStatus {
-	INIT = "INIT",
-	CONNECTING = "CONNECTING",
-	CONNECTED = "CONNECTED",
-	DISCONNECTED = "DISCONNECTED",
-	STOPPED = "STOPPED",
+	INIT = 'INIT',
+	CONNECTING = 'CONNECTING',
+	CONNECTED = 'CONNECTED',
+	DISCONNECTED = 'DISCONNECTED',
+	STOPPED = 'STOPPED',
 }
 
 export type NewWebSocketConn = {
@@ -67,7 +67,9 @@ export class NewWebSocketClient {
 	 * Process requests after reconnection
 	 * @private
 	 */
-	private onRestore?: (data: NewWebSocketStore) => NewWebSocketStore | undefined;
+	private onRestore?: (
+		data: NewWebSocketStore,
+	) => NewWebSocketStore | undefined;
 	private onOpened?: (data: NewWebSocketInfo) => void;
 	private onError?: (data: NewWebSocketInfo) => void;
 	private onClosed?: (data: NewWebSocketInfo) => void;
@@ -89,17 +91,17 @@ export class NewWebSocketClient {
 		this.onConnection = options.onConnection;
 		this.onUpdate = options.onUpdate;
 
-		this.options = options
+		this.options = options;
 	}
 
-	protected log(msg: string, type: "log" | "error" | "warn" = "log"): void {
+	protected log(msg: string, type: 'log' | 'error' | 'warn' = 'log'): void {
 		const data = `[WS:${this.connectionName}] ${msg}`;
 		switch (type) {
-			case "error": {
+			case 'error': {
 				console.error(data);
 				return;
 			}
-			case "warn": {
+			case 'warn': {
 				console.warn(data);
 				return;
 			}
@@ -115,12 +117,12 @@ export class NewWebSocketClient {
 		}
 		if ([NewWebSocketStatus.CONNECTED].includes(this.status)) {
 			if (this.debug) {
-				this.log("Connection already established");
+				this.log('Connection already established');
 			}
 			return;
 		}
-		if(this.isChangePrevStatus){
-			this.prevStatus = this.status
+		if (this.isChangePrevStatus) {
+			this.prevStatus = this.status;
 		}
 
 		if (
@@ -132,7 +134,7 @@ export class NewWebSocketClient {
 		) {
 			this.status = NewWebSocketStatus.CONNECTING;
 			if (this.debug) {
-				this.log("Initializing connection");
+				this.log('Initializing connection');
 			}
 			this.onConnection?.({
 				conn: this.getConnectionInfo(),
@@ -156,16 +158,16 @@ export class NewWebSocketClient {
 			this.handleOpen();
 
 			// Sending saved requests after the connection is restored
-			if(this.prevStatus === NewWebSocketStatus.INIT) return
-			if(this.onRestore){
-				const newStore = this.onRestore(this.storedRequests)
-				if(newStore !== undefined){
-					this.storedRequests = new Set(newStore)
+			if (this.prevStatus === NewWebSocketStatus.INIT) return;
+			if (this.onRestore) {
+				const newStore = this.onRestore(this.storedRequests);
+				if (newStore !== undefined) {
+					this.storedRequests = new Set(newStore);
 				}
 			}
-			this.storedRequests.forEach(elem=>{
+			this.storedRequests.forEach((elem) => {
 				this.ws!.send(elem);
-			})
+			});
 		};
 		this.ws.onclose = () => this.handleClose();
 		this.ws.onerror = (error) => this.handleError(error);
@@ -177,7 +179,7 @@ export class NewWebSocketClient {
 			![NewWebSocketStatus.CONNECTED, NewWebSocketStatus.CONNECTING].includes(
 				this.status,
 			)
-		){
+		) {
 			return;
 		}
 		this.isStopped = true;
@@ -191,7 +193,7 @@ export class NewWebSocketClient {
 		this.status = NewWebSocketStatus.STOPPED;
 
 		if (this.debug) {
-			this.log("Connection closed");
+			this.log('Connection closed');
 		}
 		this.onClosed?.({
 			conn: this.getConnectionInfo(),
@@ -210,7 +212,7 @@ export class NewWebSocketClient {
 			return;
 
 		if (this.debug) {
-			this.log("Connection forcibly broken");
+			this.log('Connection forcibly broken');
 		}
 
 		if (this.ws) {
@@ -225,47 +227,44 @@ export class NewWebSocketClient {
 		};
 	}
 
-	private _send(data: string): boolean{
+	private _send(data: string): boolean {
 		if (this.ws && this.status === NewWebSocketStatus.CONNECTED) {
 			if (this.debugMessage) {
 				let parseData = data;
 				try {
 					parseData = JSON.parse(data);
-				} catch (e) {}
-				this.log("Sent message: " + parseData);
+				} catch (e) {
+					if (this.debug) {
+						this.log('Failed to parse data:' + e);
+					}
+				}
+				this.log('Sent message: ' + parseData);
 			}
 			this.ws.send(data);
-			return true
+			return true;
 		} else {
 			if (this.debug) {
-				this.log(
-					"Failed to send data: socket is not connected",
-				);
+				this.log('Failed to send data: socket is not connected');
 			}
 			this.onError?.({
 				conn: this.getConnectionInfo(),
-				data:
-					"Bad Request: The endpoint that you are trying to connect to is invalid",
+				data: 'Bad Request: The endpoint that you are trying to connect to is invalid',
 			});
 		}
-		return false
+		return false;
 	}
 	sendMessage(data: string): boolean {
 		return this._send(data);
 	}
-	subscribe(
-		data: string,
-	): void {
-		if(this._send(data)) this.storedRequests.add(data)
+	subscribe(data: string): void {
+		if (this._send(data)) this.storedRequests.add(data);
 	}
-	unsubscribe(
-		data: string,
-	): void {
-		if(this._send(data)) this.storedRequests.delete(data)
+	unsubscribe(data: string): void {
+		if (this._send(data)) this.storedRequests.delete(data);
 	}
 
-	removeStoreKey(key: string): void{
-		this.storedRequests.delete(key)
+	removeStoreKey(key: string): void {
+		this.storedRequests.delete(key);
 	}
 	/**
 	 * Method for clearing the query store
@@ -285,7 +284,7 @@ export class NewWebSocketClient {
 		this.status = NewWebSocketStatus.CONNECTED;
 		this.clearReconnectTimer();
 		if (this.debug) {
-			this.log("Connection established");
+			this.log('Connection established');
 		}
 		this.onOpened?.({
 			conn: this.getConnectionInfo(),
@@ -305,7 +304,7 @@ export class NewWebSocketClient {
 		this.ws = null;
 
 		if (this.debug) {
-			this.log("Connection closed");
+			this.log('Connection closed');
 		}
 
 		this.onClosed?.({
@@ -321,7 +320,7 @@ export class NewWebSocketClient {
 
 		this.reconnectTimer = setTimeout(() => {
 			if (this.debug) {
-				this.log("Trying to reconnect...");
+				this.log('Trying to reconnect...');
 			}
 			this.open();
 		}, this.reconnectTimeout);
@@ -329,15 +328,15 @@ export class NewWebSocketClient {
 
 	private handleError(error: Event): void {
 		const websocketError: WebsocketError = {
-			code: "WebSocketError",
+			code: 'WebSocketError',
 			error: error.type,
-			message: (error as ErrorEvent).message || "WebSocket error",
-			name: "WebSocketError",
+			message: (error as ErrorEvent).message || 'WebSocket error',
+			name: 'WebSocketError',
 			success: false,
 		};
 
 		if (this.debug) {
-			this.log("WebSocket error: " + error, "error");
+			this.log('WebSocket error: ' + error, 'error');
 		}
 		this.onError?.({
 			conn: this.getConnectionInfo(),

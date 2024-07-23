@@ -15,7 +15,7 @@ RUN pnpm run build
 FROM base
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
-ENV ID_DOCKER=true
+ENV IS_DOCKER=true
 
 ENV VITE_BASE_HTTP_URL=$VITE_BASE_HTTP_URL
 ENV VITE_BASE_WS_URL=$VITE_BASE_WS_URL

@@ -1,12 +1,15 @@
-export const getErrorMessageFromE = (e: unknown) => {
-  let msg = ''; // error under useUnknownInCatchVariables
-
-  if (typeof e === 'string') {
-    // @ts-ignore
-    msg = e?.message || e.toUpperCase(); // works, `e` narrowed to string
-  } else if (e instanceof Error) {
-    msg = e.message; // works, `e` narrowed to Error
-  }
-
-  return msg || '';
+export const getErrorMessageFromE = (e: unknown): string => {
+	if (typeof e === 'string') {
+		return e.toUpperCase();
+	} else if (e instanceof Error) {
+		return e.message;
+	} else if (
+		e &&
+		typeof e === 'object' &&
+		'message' in e &&
+		typeof e.message === 'string'
+	) {
+		return e.message;
+	}
+	return '';
 };

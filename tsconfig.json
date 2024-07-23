@@ -30,6 +30,7 @@
       "@common": ["src/assets/scss/common.scss"]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -4,11 +4,11 @@ import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 import { Service } from '@/react-query';
-import { getTitleFromRoute, ROUTES } from '@/routes.tsx';
 import { setAppStore, Store } from '@/zustand';
 
 import s from './index.module.scss';
 import { usePageTitle } from '@/hooks';
+import {getTitleFromRoute, ROUTES} from "@/routes.tsx";
 
 export const PostsPage: FC = () => {
   const { testCountStore } = Store.app.use();
@@ -41,7 +41,7 @@ export const PostsPage: FC = () => {
           <>
             {posts?.map((post) => (
               <Link
-                to={ROUTES.postDetail.path.replace(':id', String(post.id))}
+                to={ROUTES.postDetail.path?.replace(':id', String(post.id)) || ''}
                 className={s.list}
                 key={post.id}
               >

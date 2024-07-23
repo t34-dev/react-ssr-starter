@@ -5,27 +5,21 @@
   width: 100%;
 }
 
-.menu{
+.nav{
 	display: flex;
 	width: 100%;
 	gap: 1rem;
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
-	&__item {
-		display: block;
-		padding: 1rem 2rem;
-		color: inherit;
-
-		&:hover {
-			text-decoration: none;
-			background: #5e74b9;
-		}
-		&Active {
-			background: #5e74b9 !important;
+	&__icon{
+		flex: 0 0 auto;
+		img{
+			max-width: 3rem;
 		}
 	}
 	&__left{
+		flex: 1 1 auto;
 		display: flex;
 		align-items: center;
 		gap: .2rem;
@@ -53,5 +47,20 @@
 	}
 	&__STOPPED{
 		background: #000;
+	}
+}
+.menu{
+	&__item {
+		display: block;
+		padding: 1rem 2rem;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+			background: #5e74b9;
+		}
+		&Active {
+			background: #5e74b9 !important;
+		}
 	}
 }

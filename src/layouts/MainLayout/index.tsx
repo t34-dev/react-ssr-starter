@@ -4,7 +4,7 @@ import { FC, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import viteLogo from '/vite.svg';
+import viteLogo from '/favicon/favicon.svg';
 import reactLogo from '/react.svg';
 import { RouteItem } from '@/models/route-item.ts';
 import { ROUTES } from '@/routes.tsx';

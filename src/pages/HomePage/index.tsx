@@ -5,7 +5,6 @@ import {Container} from '@/components';
 
 export const HomePage: FC = () => {
 	useEffect(() => {
-		debugger
 		console.log(1111)
 	}, []);
   return (

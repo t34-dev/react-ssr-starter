@@ -51,6 +51,7 @@ export default defineConfig(({mode}) => {
       },
     },
     build: {
+			sourcemap: isDev,
       rollupOptions: {
         external: ['src/i18n/download'],
       },

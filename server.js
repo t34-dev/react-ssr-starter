@@ -12,7 +12,7 @@ const isProduction = env.NODE_ENV === 'production'
 
 // =====================================================
 const hostname = env.HOST || 'localhost'
-const port = env.PORT ? env.PORT : isHTTPS ? 443 : 5173
+const port = env.PORT ? parseInt(env.PORT) : (isHTTPS ? 443 : 5173)
 // =====================================================
 
 const base = env.BASE || '/'

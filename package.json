@@ -34,7 +34,7 @@
 		"husky"
 	],
 	"engines": {
-		"node": ">= 20 < 21"
+		"node": ">= 18 < 21"
 	},
 	"author": "Vitalii Rozhkov <welldoittoo@gmail.com>",
 	"license": "ISC",

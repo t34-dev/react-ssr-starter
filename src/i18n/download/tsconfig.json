@@ -1,16 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES6",
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": ".",
-    "resolveJsonModule": true,
-    "noEmit": false
-  },
-  "include": ["./index.ts"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "ES6",
+		"moduleResolution": "node",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"rootDir": ".",
+		"resolveJsonModule": true,
+		"noEmit": false
+	},
+	"include": ["./index.ts"],
+	"exclude": ["node_modules"]
 }

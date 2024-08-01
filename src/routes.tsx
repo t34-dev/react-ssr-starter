@@ -1,7 +1,13 @@
 import { ZustandPage } from '@pages/ZustandPage';
 import { i18n } from '@/i18n';
-import { ErrorPage, HomePage, PostPage, PostsPage, WebSocketPage } from '@/pages';
-import { WebSocketV3Page } from "@pages/_/WebSocketV3Page";
+import {
+	ErrorPage,
+	HomePage,
+	PostPage,
+	PostsPage,
+	WebSocketPage,
+} from '@/pages';
+import { WebSocketV3Page } from '@pages/_/WebSocketV3Page';
 import { RouteObject } from 'react-router-dom';
 
 export type ExtendedRouteObject = RouteObject & {
@@ -60,11 +66,9 @@ export const getTitleFromRoute = (route: ExtendedRouteObject) => {
 	return i18n.t(route.titleLang || route.title);
 };
 
-
 // Create an array of routes for use with useRoutes
 export const routes: ExtendedRouteObject[] = Object.values(ROUTES);
 
-
 export const getPathFromRoute = (route: ExtendedRouteObject): string => {
-	return route.path || "";
+	return route.path || '';
 };

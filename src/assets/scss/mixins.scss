@@ -1,257 +1,257 @@
-@import 'vars';
+@import "vars";
 
 // ================================== Title
 @mixin titleXLarge() {
-  font-weight: 500;
-  font-size: 3.2rem;
-  line-height: 4rem;
+	font-weight: 500;
+	font-size: 3.2rem;
+	line-height: 4rem;
 }
 
 @mixin titleLarge() {
-  font-weight: 500;
-  font-size: 2.8rem;
-  line-height: 4rem;
+	font-weight: 500;
+	font-size: 2.8rem;
+	line-height: 4rem;
 }
 
 @mixin titleMedium() {
-  font-weight: 500;
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+	font-weight: 500;
+	font-size: 2.4rem;
+	line-height: 3.2rem;
 }
 
 @mixin titleSmall() {
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 3.2rem;
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 3.2rem;
 }
 
 @mixin titleExtraSmall() {
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 3.2rem;
+	font-weight: 500;
+	font-size: 1.6rem;
+	line-height: 3.2rem;
 }
 
 // ================================== Buttons
 @mixin buttonLarge() {
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
 }
 
 @mixin buttonMedium() {
-  font-weight: 600;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
+	font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
 }
 @mixin buttonSmall() {
-  font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 2.4rem;
-  letter-spacing: 0.015rem;
+	font-weight: 600;
+	font-size: 1.3rem;
+	line-height: 2.4rem;
+	letter-spacing: 0.015rem;
 }
 @mixin buttonExtraSmall() {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  letter-spacing: 0.02rem;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.6rem;
+	letter-spacing: 0.02rem;
 }
 @mixin buttonDefault() {
-  @include buttonMedium;
+	@include buttonMedium;
 }
 
 // Large
 @mixin bodyLargeRegular() {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	font-weight: 400;
 }
 
 @mixin bodyLargeMedium() {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	font-weight: 500;
 }
 
 @mixin bodyLargeSemiBold() {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: 600;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	font-weight: 600;
 }
 
 // Default
 @mixin bodyDefaultRegular() {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 400;
 }
 
 @mixin bodyDefaultMedium() {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-weight: 500;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 500;
 }
 
 @mixin bodyDefaultSemiBold() {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 600;
 }
 
 // Small
 @mixin bodySmallRegular() {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-weight: 400;
 }
 
 @mixin bodySmallMedium() {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-weight: 500;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-weight: 500;
 }
 
 @mixin bodySmallSemiBold() {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-weight: 600;
 }
 
 @mixin bodySmallHyperlink() {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-weight: 400;
 }
 
 // ================================== Caption
 @mixin captionSmall() {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2rem;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.2rem;
 }
 
 @mixin captionInter() {
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
 }
 
 @mixin captionDefault() {
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.6rem;
 }
 
 @mixin captionHyperlink() {
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  text-decoration: underline;
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+	text-decoration: underline;
 }
 
 // disable focus
 @mixin noneFocus() {
-  outline: none !important;
+	outline: none !important;
 }
 
 // // scroll color
-@mixin scrollColor($scrollColor: #444, $bgColor: '') {
-  ::-webkit-scrollbar {
-    width: 5px;
-    background: $bgColor;
-  }
+@mixin scrollColor($scrollColor: #444, $bgColor: "") {
+	::-webkit-scrollbar {
+		width: 5px;
+		background: $bgColor;
+	}
 
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: $bgColor;
-  }
+	::-webkit-scrollbar-track {
+		border-radius: 10px;
+		background: $bgColor;
+	}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: $scrollColor;
-    opacity: 0.4;
-    border-radius: 10px;
-  }
+	::-webkit-scrollbar-thumb {
+		background-color: $scrollColor;
+		opacity: 0.4;
+		border-radius: 10px;
+	}
 }
 
 // reflect by gorizonatli
 @mixin mirrorHorizontally() {
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-  filter: 'FlipH';
-  -ms-filter: 'FlipH';
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	filter: "FlipH";
+	-ms-filter: "FlipH";
 }
 
 // vertical reflect
 @mixin mirrorVertically() {
-  -moz-transform: scale(1, -1);
-  -webkit-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
-  transform: scale(1, -1);
-  filter: 'FlipV';
-  -ms-filter: 'FlipV';
+	-moz-transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
+	-o-transform: scale(1, -1);
+	transform: scale(1, -1);
+	filter: "FlipV";
+	-ms-filter: "FlipV";
 }
 
 // disallow transfer
 @mixin noneWrap() {
-  word-wrap: break-word;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+	word-wrap: break-word;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 // none scroll
 @mixin noneScroll() {
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
-  }
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		background: transparent;
+	}
 
-  &::-webkit-scrollbar-thumb {
-    background: transparent;
-  }
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+	}
 }
 
 // disable select
 @mixin noneSelect() {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 @mixin boxShadow($opacity: 0.2) {
-  box-shadow: var(--areaBoxShadow);
+	box-shadow: var(--areaBoxShadow);
 }
 
 @mixin borderRadius($opacityRadius: 0.07) {
-  border: 1px solid rgb(255, 255, 255, $opacityRadius);
+	border: 1px solid rgb(255, 255, 255, $opacityRadius);
 }
 
 @mixin areaBox($opacity: 1, $opacityRadius: 0.1) {
-  @include box-shadow($opacity);
-  @include border-radius($opacityRadius);
+	@include box-shadow($opacity);
+	@include border-radius($opacityRadius);
 }
 
 @mixin truncate($max) {
-  display: -webkit-box;
-  display: -moz-box;
-  -webkit-line-clamp: $max;
-  -moz-line-clamp: $max;
-  line-clamp: $max;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  overflow: hidden;
+	display: -webkit-box;
+	display: -moz-box;
+	-webkit-line-clamp: $max;
+	-moz-line-clamp: $max;
+	line-clamp: $max;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+	overflow: hidden;
 }
 
 @mixin more() {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

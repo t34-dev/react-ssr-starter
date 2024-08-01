@@ -13,6 +13,11 @@ rmdist:
 	@echo "Removing dist folder..."
 	@pnpm rmdist
 
+# Clean project
+clean:
+	@echo "Cleaning project..."
+	@pnpm clean
+
 # Update version
 version-up:
 	@echo "Updating version..."
@@ -35,9 +40,12 @@ dev-ssr:
 
 run:
 	@pnpm build
-	@pnpm preview
+	@pnpm serve
+serve:
+	$(MAKE) run
 
 run-ssr:
 	@pnpm ssr:build
-	@pnpm ssr:preview
-
+	@pnpm ssr:serve
+serve-ssr:
+	$(MAKE) run-ssr

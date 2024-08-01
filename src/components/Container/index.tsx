@@ -4,12 +4,12 @@ import { FC, PropsWithChildren } from 'react';
 import s from './index.module.scss';
 
 interface ContainerProps {
-  className?: string;
+	className?: string;
 }
 
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({
-  className,
-  children,
+	className,
+	children,
 }) => {
-  return <div className={clsx(s.wrap, className)}>{children}</div>;
+	return <div className={clsx(s.wrap, className)}>{children}</div>;
 };

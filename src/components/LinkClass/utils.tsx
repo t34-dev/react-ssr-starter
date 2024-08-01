@@ -5,34 +5,34 @@
  */
 
 type MenuItem<T> = T & {
-  path: string;
+	path: string;
 };
 
 export function getActiveLink<T>(
-  menuItems: MenuItem<T>[],
-  currentPath: string,
+	menuItems: MenuItem<T>[],
+	currentPath: string,
 ): MenuItem<T> | null {
-  const sortedMenuItems = [...menuItems].sort(
-    (a, b) => b.path.length - a.path.length,
-  );
+	const sortedMenuItems = [...menuItems].sort(
+		(a, b) => b.path.length - a.path.length,
+	);
 
-  const currentPathSegments = currentPath.split('/').filter(Boolean);
+	const currentPathSegments = currentPath.split('/').filter(Boolean);
 
-  for (const item of sortedMenuItems) {
-    const itemPathSegments = item.path.split('/').filter(Boolean);
+	for (const item of sortedMenuItems) {
+		const itemPathSegments = item.path.split('/').filter(Boolean);
 
-    if (itemPathSegments.length !== currentPathSegments.length) {
-      continue;
-    }
+		if (itemPathSegments.length !== currentPathSegments.length) {
+			continue;
+		}
 
-    const match = itemPathSegments.every(
-      (segment, index) => segment === currentPathSegments[index],
-    );
+		const match = itemPathSegments.every(
+			(segment, index) => segment === currentPathSegments[index],
+		);
 
-    if (match) {
-      return item;
-    }
-  }
+		if (match) {
+			return item;
+		}
+	}
 
-  return null;
+	return null;
 }

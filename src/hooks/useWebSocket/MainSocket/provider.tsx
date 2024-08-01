@@ -1,9 +1,10 @@
 import { FC, PropsWithChildren, useCallback, useRef, useState } from 'react';
 import {
-	NewWebSocketClient,
-	NewWebSocketInfo,
-	NewWebSocketStatus,
-} from '@/utils/socket.ts';
+	WebSocketClient,
+	WebSocketInfo,
+	WebSocketStatus,
+} from '@well-do-it-too/ts-websocket-client';
+
 import {
 	createSocketMainContext,
 	SocketCallbackDTO,
@@ -33,14 +34,14 @@ export const MainSocketProvider: FC<
 	PropsWithChildren<{ option: WebSocketProviderOption }>
 > = ({ children, option }) => {
 	const currentRequstId = useRef(0);
-	const clientRef = useRef<NewWebSocketClient | null>(null);
+	const clientRef = useRef<WebSocketClient | null>(null);
 
 	const messagesRef = useRef<
 		Map<number, SocketCallbackDTO<SocketSubMessageDTO[]>>
 	>(new Map());
 
 	const subscribesRef = useRef<SubscribesRef>(new Map());
-	const [connectInfo, setConnectInfo] = useState<NewWebSocketInfo | null>(null);
+	const [connectInfo, setConnectInfo] = useState<WebSocketInfo | null>(null);
 
 	const getSubscribeKey = (req: MainSocketSubscribeRequestDTO) =>
 		`${req.op}::${req.args}`;
@@ -82,19 +83,19 @@ export const MainSocketProvider: FC<
 			return;
 		}
 
-		const onOpened = (info: NewWebSocketInfo) => {
+		const onOpened = (info: WebSocketInfo) => {
 			setConnectInfo(info);
 		};
-		const onClosed = (info: NewWebSocketInfo) => {
+		const onClosed = (info: WebSocketInfo) => {
 			setConnectInfo(info);
 		};
-		const onError = (info: NewWebSocketInfo) => {
+		const onError = (info: WebSocketInfo) => {
 			setConnectInfo(info);
 		};
-		const onConnection = (info: NewWebSocketInfo) => {
+		const onConnection = (info: WebSocketInfo) => {
 			setConnectInfo(info);
 		};
-		const onUpdate = (info: NewWebSocketInfo) => {
+		const onUpdate = (info: WebSocketInfo) => {
 			const { pong } = Store.app.getState();
 			if (info.data === 'ping' && pong) {
 				clientRef.current?.sendMessage('pong');
@@ -108,7 +109,7 @@ export const MainSocketProvider: FC<
 				}
 			}
 		};
-		const client = new NewWebSocketClient({
+		const client = new WebSocketClient({
 			connectionName: option.name,
 			url: option.url,
 			reconnectTimeout: option.reconnectTimeout,
@@ -143,7 +144,7 @@ export const MainSocketProvider: FC<
 		const client = clientRef.current;
 		if (!client) return;
 		try {
-			if (client?.getInfo().conn?.status === NewWebSocketStatus.CONNECTED) {
+			if (client?.getInfo().conn?.status === WebSocketStatus.CONNECTED) {
 				// make ID
 				currentRequstId.current += 1;
 				const id = currentRequstId.current;
@@ -169,7 +170,7 @@ export const MainSocketProvider: FC<
 	// 	const client = clientRef.current
 	// 	if (!client) return
 	// 	try {
-	// 		if (client?.getInfo().conn?.status === NewWebSocketStatus.CONNECTED) {
+	// 		if (client?.getInfo().conn?.status === WebSocketStatus.CONNECTED) {
 	// 			// make req
 	// 			const req: MainSocketSubscribeRequestDTO = {
 	// 				op: 'subscribe',
@@ -203,7 +204,7 @@ export const MainSocketProvider: FC<
 	// 	const client = clientRef.current
 	// 	if (!client) return
 	// 	try {
-	// 		if (client?.getInfo().conn?.status === NewWebSocketStatus.CONNECTED) {
+	// 		if (client?.getInfo().conn?.status === WebSocketStatus.CONNECTED) {
 	// 			// make req
 	// 			const req: MainSocketSubscribeRequestDTO = {
 	// 				op: 'unsubscribe',

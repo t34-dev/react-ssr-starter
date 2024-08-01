@@ -7,9 +7,10 @@ import { QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { ENV } from '@/env.ts';
 import { MainSocketProvider } from '@/hooks/useWebSocket/MainSocket/provider.tsx';
+import { parseBoolean } from '@/utils/boolean.ts';
 
 const rootElement = document.getElementById('root') as HTMLElement;
-if (Boolean(import.meta.env.VITE_SSR)) {
+if (parseBoolean(import.meta.env.VITE_SSR)) {
 	ReactDOM.hydrateRoot(
 		document.getElementById('root') as HTMLElement,
 		<React.StrictMode>

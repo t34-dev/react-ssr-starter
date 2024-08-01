@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
 export interface ApiError {}
 
 export function filterRequestParams<T extends Record<string, any>>(

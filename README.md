@@ -1,109 +1,11 @@
-## Фишки
+[![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript&ver=1722634298)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green?logo=node.js&ver=1722634298)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/t34-dev/react-ssr-starter?ver=1722634298)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/t34-dev/react-ssr-starter?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&ver=1722634298)
 
-- Проект работает как в SSR так и без режиме
-- HTTPS в режиме локальной разработки
-- минификация файлов для продакшн
-- реализована работа с сокетами
-- TS / SCSS
-- eslint / stylelint / prettie
-- мультиязычность
-- поддержка прокси
-- темы
-- react-query
-- zustand
-- сборка в Docker
-- автоматическое увеличение тегов
-- автоматическое обновление версии проекта
+# react-ssr-starter
 
-# /============== Сертификаты
+---
 
-1. добавляем новый домен в систему (если есть папка .certs - то переходим на 3п.)
-
-```bash
-# windows
-C:\Windows\System32\drivers\etc\hosts
-
-# macOS и Linux
-/etc/hosts
-```
-
-дописываем строчку
-
-```bash
-127.0.0.1       react-ssr-starter.dev
-```
-
-2. Генерируем локальные сертификаты (убедиться что в скрипте указан верный адрес домена). Эти сертификаты используются только для локальной разработки.
-
-```bash
-pnpm run cert:create
-```
-
-3. После того как мы сгенерировали сертификаты - нам нужно добавить "корневой сертификат"
-   (который сгенерировали) в нашу систему "корневых сертификатов". Проще всего это сделать - зайти в
-   папку и кликнуть 2 раза на "ca.crt"
-   1. Установить сертификат -> Текущий пользователь
-   2. Переключиться на "Поместить все сертификаты в сл..." -> Обзор
-   3. Выбрать "Доверенные корневые центры сертификатов" и нажать ОК
-   4. Далее -> Готово -> Да (применить)
-4. После того как мы его добавили - нужно перезагрузить пользователя или ОС
-5. Запускаем проект
-
-```bash
-# window
-pnpm run dev
-
-#mac
-sudo pnpm run dev
-```
-
-# Media
-
-Точки Брейкпоинтов.
-
-```shell
-# desktop
-[1880] Media-Desktop
-[1420] Media-Desktop-Big
-[1280] Media-Desktop-Small
-# table
-[960] Media-Table-Big
-[768] Media-Table-Small
-# mobile
-[480] Media-Mobile-Big
-[360] Media-Mobile-Small
-```
-
-# /============== VITE
-
-## DEV
-
-```shell
-# Создаем файл .env (используем .env.example)
-npm run dev
-```
-
-## PROD
-
-```shell
-# Прокидываем переменные окружения (если надо)
-npm run build
-npm run preview
-```
-
-# /============== VITE + SSR
-
-## DEV
-
-```shell
-# Создаем файл .env (используем .env.example)
-npm run ssr:dev
-```
-
-## PROD
-
-```shell
-# Прокидываем переменные окружения (если надо)
-npm run ssr:build
-npm run ssr:preview
-```
+Developed with ❤️ by [T34](https://github.com/t34-dev)

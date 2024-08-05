@@ -3,7 +3,7 @@ import {
 	WebSocketClient,
 	WebSocketInfo,
 	WebSocketStatus,
-} from '@well-do-it-too/ts-websocket-client';
+} from '@t34-dev/ts-ws-client';
 
 import {
 	createSocketMainContext,

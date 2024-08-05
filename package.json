@@ -1,8 +1,8 @@
 {
-	"name": "tm-finish",
+	"name": "react-ssr-starter",
 	"private": true,
 	"version": "1.0.0",
-	"description": "",
+	"description": "Starter template for React projects with pre-configured development tools. Includes setup for comfortable development with optional SSR capabilities. An ideal foundation for quickly starting React application development.",
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
@@ -19,6 +19,13 @@
 		"ssr:build": "pnpm run ssr:build:client && pnpm run ssr:build:server",
 		"ssr:serve": "cross-env NODE_ENV=production node server",
 		"======": "===========================================",
+		"svg:optimize": "svgo -f src -f public --recursive",
+		"img:optimize": "node image-optimizer.js",
+		"img:optimize2": "node image-optimizer2.js",
+		"img:opt1": "node image-opt1.js",
+		"img:opt2": "node image-opt2.js",
+		"img:opt3": "node image-opt3.js",
+		"=== shared": "===========================================",
 		"stylelint": "stylelint \"src/**/*.scss\"",
 		"stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
 		"lint": "eslint .",
@@ -38,18 +45,18 @@
 	"engines": {
 		"node": ">= 20 < 21"
 	},
-	"author": "Vitalii Rozhkov <welldoittoo@gmail.com>",
+	"author": "Vitalii Rozhkov <t34.dev@gmail.com>",
 	"license": "ISC",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Well-do-it-too/react-ssr-starter.git"
+		"url": "https://github.com/t34-dev/react-ssr-starter.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Well-do-it-too/react-ssr-starter/issues"
+		"url": "https://github.com/t34-dev/react-ssr-starter/issues"
 	},
-	"homepage": "https://github.com/Well-do-it-too/react-ssr-starter#readme",
+	"homepage": "https://github.com/t34-dev/react-ssr-starter#readme",
 	"dependencies": {
-		"@well-do-it-too/ts-websocket-client": "^1.0.7",
+		"@t34-dev/ts-ws-client": "^1.1.1",
 		"axios": "^1.6.8",
 		"clsx": "^2.1.1",
 		"express": "^4.19.2",
@@ -92,6 +99,7 @@
 		"stylelint-config-standard-scss": "^13.1.0",
 		"stylelint-prettier": "^5.0.2",
 		"typescript": "^5.4.5",
+		"vite-plugin-imagemin": "^0.6.1",
 		"vite-tsconfig-paths": "^4.3.2"
 	}
 }

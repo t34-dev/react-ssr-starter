@@ -28,24 +28,33 @@ pre:
 	@echo "Running pre-commit checks..."
 	@pnpm pre-commit
 
+# Run linter
+lint:
+	@echo "Running linter..."
+	@pnpm lint
+
+# Format code
+format:
+	@echo "Formatting code..."
+	@pnpm format
 
 cert:
 	@pnpm certs:init
 
 dev:
 	@pnpm dev
+build:
+	@pnpm build
+serve:
+	@pnpm serve
 
+svg:
+	@pnpm svg:optimize
+
+
+build-ssr:
+	@pnpm ssr:build
 dev-ssr:
 	@pnpm ssr:dev
-
-run:
-	@pnpm build
-	@pnpm serve
-serve:
-	$(MAKE) run
-
-run-ssr:
-	@pnpm ssr:build
-	@pnpm ssr:serve
 serve-ssr:
-	$(MAKE) run-ssr
+	@pnpm ssr:serve

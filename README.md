@@ -8,6 +8,7 @@
 
 Starter template for React projects with pre-configured development tools. Includes setup for comfortable development with optional SSR capabilities. An ideal foundation for quickly starting React application development.
 
+
 ---
 
 Developed with ❤️ by [T34](https://github.com/t34-dev)

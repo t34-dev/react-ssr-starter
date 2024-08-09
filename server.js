@@ -5,6 +5,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
 import { loadEnv } from 'vite';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 let isHTTPS = parseBoolean(env.HTTPS);
@@ -32,6 +33,18 @@ const ssrManifest = !isDev ? await fs.readFile('./dist/client/.vite/ssr-manifest
 
 // Create http server
 const app = express();
+
+// Add proxy middleware
+const proxyOptions = {
+	target: 'http://localhost:8080',
+	changeOrigin: true,
+	ws: true,
+	pathRewrite: {
+		'^/api': '',
+	},
+};
+
+app.use('/api', createProxyMiddleware(proxyOptions));
 
 // Add Vite or respective production middlewares
 let vite;

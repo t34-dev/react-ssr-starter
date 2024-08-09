@@ -2,16 +2,16 @@ import { FC, useCallback, useEffect, useState } from 'react';
 
 import s from './index.module.scss';
 import {
-	NewWebSocketClient,
-	NewWebSocketInfo,
-	NewWebSocketStore,
-} from '@/utils/socket.ts';
+	WebSocketClient,
+	WebSocketInfo,
+	WebSocketStore,
+} from '@t34-dev/ts-ws-client';
 import { Container } from '@/components';
 import { ENV } from '@/env.ts';
 
 type WSItem = {
-	client: NewWebSocketClient;
-	info: NewWebSocketInfo;
+	client: WebSocketClient;
+	info: WebSocketInfo;
 };
 
 export const WebSocketPage: FC = () => {
@@ -32,42 +32,42 @@ export const WebSocketPage: FC = () => {
 	}, []);
 
 	useEffect(() => {
-		const onOpened = (info: NewWebSocketInfo) => {
+		const onOpened = (info: WebSocketInfo) => {
 			console.log('myFuncOpened');
 			setVelueWs({
 				info,
 			});
 		};
-		const onClosed = (info: NewWebSocketInfo) => {
+		const onClosed = (info: WebSocketInfo) => {
 			console.log('myFunClosed');
 			setVelueWs({
 				info,
 			});
 		};
-		const onError = (info: NewWebSocketInfo) => {
+		const onError = (info: WebSocketInfo) => {
 			console.log('myFuncError', info.data);
 			setVelueWs({
 				info,
 			});
 		};
-		const onConnection = (info: NewWebSocketInfo) => {
+		const onConnection = (info: WebSocketInfo) => {
 			console.log('myConnection');
 			setVelueWs({
 				info,
 			});
 		};
-		const onUpdate = (info: NewWebSocketInfo) => {
+		const onUpdate = (info: WebSocketInfo) => {
 			console.log('myFuncMessage', info.data);
 			setVelueWs({
 				info,
 			});
 		};
-		const onRestore = (storedRequests: NewWebSocketStore) => {
+		const onRestore = (storedRequests: WebSocketStore) => {
 			storedRequests.delete('unnecessaryKey');
 
 			return storedRequests;
 		};
-		const client = new NewWebSocketClient({
+		const client = new WebSocketClient({
 			connectionName: 'test',
 			url: ENV.BASE_WS_URL,
 			reconnectTimeout: 1000,

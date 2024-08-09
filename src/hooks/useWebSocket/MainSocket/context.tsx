@@ -1,13 +1,13 @@
 import { createContext } from 'react';
-import { NewWebSocketClient, NewWebSocketInfo } from '@/utils/socket.ts';
+import { WebSocketClient, WebSocketInfo } from '@t34-dev/ts-ws-client';
 import { SocketSubMessageDTO } from './types';
 
 export type SocketCallbackDTO<T> = (response: T) => void;
 
 export const createSocketMainContext = () =>
 	createContext<{
-		client: NewWebSocketClient | null;
-		connectInfo: NewWebSocketInfo | null;
+		client: WebSocketClient | null;
+		connectInfo: WebSocketInfo | null;
 		connect: () => void;
 		stop: () => void;
 		disconnect: () => void;

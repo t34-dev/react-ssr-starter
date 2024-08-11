@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -18,15 +18,12 @@ const fetchItems = async (): Promise<Item[]> => {
 
 export const HomePage: FC = () => {
 	const {
-		data: items,
+		data: items = [],
 		isLoading,
 		isError,
 		refetch,
 	} = useQuery<Item[]>('items', fetchItems);
 
-	useEffect(() => {
-		console.log(import.meta.env);
-	}, []);
 	return (
 		<div className={s.wrap}>
 			<Container>

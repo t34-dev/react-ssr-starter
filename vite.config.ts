@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 import viteImagemin from 'vite-plugin-imagemin';
-import { getProxyObject } from './proxyConfig.js';
+import { getProxyObject } from './proxy.config.js';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {

@@ -7,10 +7,13 @@ import { readFileSync } from 'node:fs';
 import { loadEnv } from 'vite';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
+process.env.VITE_SSR = 'true';
+
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 let isHTTPS = parseBoolean(env.HTTPS);
 const isDev = env.NODE_ENV === 'development';
 const isDocker = parseBoolean(env.IS_DOCKER);
+// const isSSR = parseBoolean(env.VITE_SSR);
 
 // =====================================================
 let hostname = env.HOST || 'localhost';

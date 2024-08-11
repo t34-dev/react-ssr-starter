@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
 import s from './index.module.scss';
 import { Container } from '@/components';
+import { ENV } from '@/env.ts';
 
 interface Item {
 	id: string;
@@ -23,10 +24,13 @@ export const HomePage: FC = () => {
 		refetch,
 	} = useQuery<Item[]>('items', fetchItems);
 
+	useEffect(() => {
+		console.log(import.meta.env);
+	}, []);
 	return (
 		<div className={s.wrap}>
 			<Container>
-				<h1>HomePage</h1>
+				<h1>HomePage, SSR: {ENV.SSR ? 'True' : 'False'}</h1>
 				<button onClick={() => refetch()}>Load Items</button>
 				{isLoading && <p>Loading...</p>}
 				{isError && <p>Error loading items</p>}

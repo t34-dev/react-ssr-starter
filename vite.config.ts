@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
 	const isDev = env.NODE_ENV === 'development';
 	const isDocker = parseBoolean(env.IS_DOCKER);
 	let isHTTPS = parseBoolean(env.HTTPS);
+	const isSSR = parseBoolean(env.VITE_SSR);
 
 	// =====================================================
 	let hostname = env.HOST || 'localhost';
@@ -113,6 +114,21 @@ export default defineConfig(({ mode }) => {
 		},
 		publicDir: './public',
 	};
+
+	if (!isSSR) {
+		config.server = {
+			...config.server,
+			proxy: {
+				'/api': {
+					target: env.VITE_API_URL || 'http://localhost:8080',
+					changeOrigin: true,
+					rewrite: (path) => path.replace(/^\/api/, ''),
+					ws: true,
+				},
+			},
+		};
+	}
+
 	if (isHTTPS) {
 		config.server = {
 			...config.server,
@@ -123,6 +139,7 @@ export default defineConfig(({ mode }) => {
 			},
 		};
 	}
+
 	if (port && !isNaN(port)) {
 		config.server = {
 			...config.server,

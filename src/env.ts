@@ -3,6 +3,7 @@ import { parseBoolean } from '@/utils/boolean.ts';
 const ENV = {
 	IS_DEV: import.meta.env.DEV,
 	IS_PRODUCTION: import.meta.env.PROD,
+	SSR: parseBoolean(import.meta.env.VITE_SSR),
 
 	BASE_HTTP_URL: import.meta.env.VITE_BASE_HTTP_URL || '',
 	BASE_WS_URL: import.meta.env.VITE_BASE_WS_URL || '',

@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 import viteImagemin from 'vite-plugin-imagemin';
+import { getProxyObject } from './proxyConfig.js';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -82,14 +83,7 @@ export default defineConfig(({ mode }) => {
 		],
 		server: {
 			host: hostname,
-			proxy: {
-				'/api': {
-					target: 'http://localhost:8080',
-					changeOrigin: true,
-					rewrite: (path) => path.replace(/^\/api/, ''),
-					ws: true,
-				},
-			},
+			// proxy: getProxyConfig(env),
 		},
 		css: {
 			modules: {
@@ -118,14 +112,15 @@ export default defineConfig(({ mode }) => {
 	if (!isSSR) {
 		config.server = {
 			...config.server,
-			proxy: {
-				'/api': {
-					target: env.VITE_API_URL || 'http://localhost:8080',
-					changeOrigin: true,
-					rewrite: (path) => path.replace(/^\/api/, ''),
-					ws: true,
-				},
-			},
+			proxy: getProxyObject(env),
+			// proxy: {
+			// 	'/api': {
+			// 		target: env.VITE_API_URL || 'http://localhost:8080',
+			// 		changeOrigin: true,
+			// 		rewrite: (path) => path.replace(/^\/api/, ''),
+			// 		ws: true,
+			// 	},
+			// },
 		};
 	}
 

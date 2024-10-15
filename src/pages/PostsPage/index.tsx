@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { FC } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 
 import { Service } from '@/react-query';

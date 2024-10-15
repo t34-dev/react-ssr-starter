@@ -1,9 +1,8 @@
 import './assets/scss/index.scss';
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import { queryClient } from '@/react-query';
-import { QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { ENV } from '@/env.ts';
 import { MainSocketProvider } from '@/hooks/useWebSocket/MainSocket/provider.tsx';

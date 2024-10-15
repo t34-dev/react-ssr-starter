@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 import s from './index.module.scss';
@@ -13,7 +13,7 @@ interface Item {
 
 const fetchItems = async (): Promise<Item[]> => {
 	const response = await axios.get<Item[]>('/api/items');
-	return response.data as Promise<Item[]>;
+	return response.data;
 };
 
 export const HomePage: FC = () => {
@@ -22,7 +22,10 @@ export const HomePage: FC = () => {
 		isLoading,
 		isError,
 		refetch,
-	} = useQuery<Item[]>('items', fetchItems);
+	} = useQuery<Item[]>({
+		queryKey: ['items'],
+		queryFn: fetchItems,
+	});
 
 	return (
 		<div className={s.wrap}>

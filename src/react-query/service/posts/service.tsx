@@ -1,4 +1,4 @@
-import { UseMutationOptions, UseQueryOptions } from 'react-query';
+import { UseMutationOptions, UseQueryOptions } from '@tanstack/react-query';
 
 import { ApiError, axiosClient, buildQueryString } from '@/api';
 import { Post } from '@/models';

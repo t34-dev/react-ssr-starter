@@ -9,10 +9,10 @@
 Starter template for React projects with pre-configured development tools. Includes setup for comfortable development with optional SSR capabilities. An ideal foundation for quickly starting React application development.
 
 plan
+
 - update start page
 - add theme
 - add media provider
-
 
 ---
 

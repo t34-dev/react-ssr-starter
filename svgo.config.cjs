@@ -9,12 +9,12 @@ module.exports = {
 		{
 			name: 'addClassesToSVGElement',
 			params: {
-				className: 'bw-icon'
+				className: 'bw-icon',
 			},
 			fn: (_ast, params, info) => {
 				// Apply only to files with the .bw.svg suffix
 				return info.path.endsWith('.bw.svg') ? { ...params } : null;
-			}
+			},
 		},
 		// Then apply standard optimizations
 		{
@@ -38,7 +38,7 @@ module.exports = {
 				if (info.path.endsWith('.bw.svg')) {
 					params.attrs.push('fill', 'stroke', 'stroke-width', 'stroke-opacity');
 				}
-				return null;  // null means "use the plugin's default behavior"
+				return null; // null means "use the plugin's default behavior"
 			},
 		},
 		// Finally, remove unnecessary spaces and optimize styles

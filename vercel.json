@@ -5,20 +5,9 @@
 			"src": "package.json",
 			"use": "@vercel/node",
 			"config": { "buildCommand": "npm run build" }
-		},
-		{
-			"src": "api/server.js",
-			"use": "@vercel/node"
 		}
 	],
 	"routes": [
-		{
-			"src": "/assets/(.*)",
-			"dest": "/dist/client/assets/$1"
-		},
-		{
-			"handle": "filesystem"
-		},
 		{
 			"src": "/(.*)",
 			"dest": "/api/server.js"

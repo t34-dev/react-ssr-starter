@@ -10,6 +10,7 @@
 		"rmdist": "shx rm -rf dist",
 		"dev": "vite",
 		"build": "npm run ssr:build",
+		"start": "npm run ssr:serve",
 		"serve": "vite preview",
 		"certs:init": "shx mkdir -p .certs && cd .certs && mkcert create-ca && mkcert create-cert --domain react-ssr-starter.dev",
 		"=== ssr": "=========== SSR =============================",

@@ -5,6 +5,14 @@
 			"src": "package.json",
 			"use": "@vercel/node",
 			"config": { "buildCommand": "npm run build" }
+		},
+		{
+			"src": "api/server.js",
+			"use": "@vercel/node"
+		},
+		{
+			"src": "dist/client/**",
+			"use": "@vercel/static"
 		}
 	],
 	"routes": [

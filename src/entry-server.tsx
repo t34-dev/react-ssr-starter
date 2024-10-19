@@ -15,5 +15,6 @@ export function render(url: string) {
 			</StaticRouter>
 		</React.StrictMode>,
 	);
+
 	return { html };
 }

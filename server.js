@@ -33,7 +33,7 @@ const certDir = isHTTPS ? resolve(dirname(fileURLToPath(import.meta.url)), '.cer
 const templateHtml = !isDev ? await fs.readFile('./dist/client/index.html', 'utf-8') : '';
 const ssrManifest = !isDev ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8') : undefined;
 
-// Create http server
+// Create http server or https
 const app = express();
 
 // Add proxies

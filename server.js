@@ -15,7 +15,7 @@ const isDocker = parseBoolean(env.IS_DOCKER);
 // const isSSR = parseBoolean(env.VITE_SSR);
 
 // =====================================================
-let hostname = env.HOST || 'localhost';
+let hostname = env.HOST || '0.0.0.0';
 let port = parseInt(env.PORT);
 if (!port) port = isHTTPS ? 443 : isDev ? 5173 : 4173;
 // =====================================================
@@ -96,24 +96,27 @@ app.use('*', async (req, res) => {
 	}
 });
 
-if (isHTTPS) {
-	https
-		.createServer(
-			{
-				key: readFileSync(resolve(certDir, './cert.key')),
-				cert: readFileSync(resolve(certDir, './cert.crt')),
-			},
-			app,
-		)
-		.listen(port, () => {
-			console.log(`HTTPS Server is running at https://${hostname}:${port}`);
-		});
-} else {
-	// Start http server
-	app.listen(port, () => {
-		console.log(`Server started at http://localhost:${port}`);
-	});
-}
+// if (isHTTPS) {
+// 	https
+// 		.createServer(
+// 			{
+// 				key: readFileSync(resolve(certDir, './cert.key')),
+// 				cert: readFileSync(resolve(certDir, './cert.crt')),
+// 			},
+// 			app,
+// 		)
+// 		.listen(port, () => {
+// 			console.log(`HTTPS Server is running at https://${hostname}:${port}`);
+// 		});
+// } else {
+// 	// Start http server
+// 	app.listen(port, () => {
+// 		console.log(`Server started at http://localhost:${port}`);
+// 	});
+// }
+app.listen(port, hostname, () => {
+	console.log(`Server started at http://${hostname}:${port}`);
+});
 
 function parseBoolean(str) {
 	return (str || '').trim().toLowerCase() === 'true';

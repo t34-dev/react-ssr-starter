@@ -9,11 +9,11 @@
 		"clean": "shx rm -rf node_modules pnpm-lock.yaml",
 		"rmdist": "shx rm -rf dist",
 		"dev": "vite",
-		"build": "npm run ssr:build",
-		"start": "npm run ssr:serve",
 		"serve": "vite preview",
 		"certs:init": "shx mkdir -p .certs && cd .certs && mkcert create-ca && mkcert create-cert --domain react-ssr-starter.dev",
 		"vercel-build": "npm run ssr:build",
+		"build": "npm run ssr:build",
+		"start": "node server.js",
 		"=== ssr": "=========== SSR =============================",
 		"ssr:dev": "cross-env NODE_ENV=development VITE_SSR=true node server",
 		"ssr:build:client": "cross-env VITE_SSR=true vite build --ssrManifest --outDir dist/client",
@@ -44,6 +44,9 @@
 		"prettier",
 		"husky"
 	],
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "latest"
+	},
 	"engines": {
 		"node": ">= 20 < 21"
 	},
